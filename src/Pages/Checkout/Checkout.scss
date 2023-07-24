@@ -1,0 +1,226 @@
+@use "../../FunctionSASS/FunctionSASS.scss" as *;
+
+.checkout__section {
+  display: grid;
+  gap: 1em;
+  // min-height: 100vh;
+
+  // background-color: red;
+  position: relative;
+
+  .no-delivery-address {
+    // background-color: red;
+    min-height: 90vh;
+    display: grid;
+    gap: 1rem;
+    place-content: center;
+
+    > p {
+      font-size: 1.5rem;
+      color: hsl(var(--txt-clr));
+      font-weight: 600;
+    }
+
+    > button {
+      padding: 0.3em 0.5em;
+      background-color: transparent;
+      border-radius: 0.3rem;
+      border: 2px solid hsl(var(--txt-clr));
+      color: hsl(var(--txt-clr));
+      font-weight: 600;
+
+      transition: 0.1s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .add__address {
+    justify-self: flex-start;
+    align-self: flex-start;
+
+    padding: 0.3em 0.5em;
+    background-color: transparent;
+    border: 2px solid hsl(var(--txt-clr));
+    border-radius: 0.3rem;
+    font-weight: 600;
+
+    transition: 0.1s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .shippingAddress {
+    // outline: 1px solid red;
+    background-color: white;
+    padding: 1em;
+    position: relative;
+    border-radius: 0.3rem;
+
+    > h2 {
+      font-size: 1.5rem;
+    }
+
+    .changeAddress {
+      position: absolute;
+      top: rem(10);
+      right: rem(10);
+
+      background-color: transparent;
+      color: hsl(var(--txt-clr));
+      font-weight: 600;
+      border: 2px solid hsl(var(--txt-clr));
+      border-radius: inherit;
+
+      font-size: 0.9rem;
+      transition: 0.1s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &__information {
+      //
+      > p {
+        font-size: 1.1rem;
+        color: hsl(var(--txt-clr));
+
+        > span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .shipping__method {
+      display: flex;
+      gap: 1em;
+      margin-top: 0.4rem;
+      > p {
+        font-size: 1.1rem;
+        min-width: max-content;
+      }
+
+      &--options {
+        display: flex;
+        column-gap: 1rem;
+        row-gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      input:checked + label {
+        background-color: black;
+        color: white;
+      }
+      input:disabled + label {
+        background-color: hsl(var(--primary-clr) / 0.9);
+        border: 1px solid grey;
+        cursor: not-allowed;
+
+        color: rgb(41, 35, 35);
+      }
+
+      label {
+        cursor: pointer;
+        border: 1px solid hsl(var(--accent-clr));
+        padding: 0.3em 0.5em;
+      }
+    }
+  }
+
+  .checkoutProduct__wrapper {
+    background-color: white;
+
+    padding-inline: 0.5em;
+  }
+
+  .place__order--wrapper {
+    padding-bottom: 2em;
+
+    margin-top: 2rem;
+    // background-color: red;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    > p {
+      color: hsl(var(--txt-clr));
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+
+    > button {
+      margin-top: 0.5rem;
+      padding: 0.3em 0.5em;
+      background-color: hsl(var(--txt-clr));
+      color: white;
+      border-color: hsl(var(--txt-clr));
+      border-radius: 0.3rem;
+      font-weight: 600;
+      letter-spacing: rem(0.5);
+
+      transition: 0.1s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .error__message {
+      font-size: 1.2rem;
+      color: red;
+      font-weight: 600;
+    }
+  }
+}
+
+.changeAddress__modal {
+  // background-color: red;
+  .addNewAddress--btn {
+    background-color: transparent;
+
+    border: 1px solid hsl(var(--accent-clr));
+    color: hsl(var(--txt-clr));
+    transition: 0.1s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .modal__submit--addressBtn {
+    margin-top: 3em;
+    padding-top: 1em;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5em;
+
+    border-top: 1px solid hsl(var(--accent-clr) / 0.5);
+
+    > button {
+      padding: 0.3em 0.5em;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      transition: 0.1s ease-in-out;
+    }
+
+    .changeAddress__btn--cancel {
+      background-color: transparent;
+      border: 1px solid hsl(var(--txt-clr));
+    }
+
+    .changeAddress__btn--submit {
+      background-color: hsl(var(--txt-clr));
+      border: 1px solid hsl(var(--txt-clr));
+      color: white;
+    }
+  }
+}

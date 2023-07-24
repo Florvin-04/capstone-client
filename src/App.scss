@@ -1,0 +1,89 @@
+@use "./FunctionSASS/FunctionSASS.scss" as *;
+
+#root {
+  --txt-clr: 0 0% 2%;
+  // --white-clr:
+  --accent-clr: 36 6% 16%;
+  --primary-clr: 98 4% 58%;
+  --primary-2-clr: 90 4% 82%;
+
+  --bg-clr: 0 0% 96%;
+}
+
+body {
+  background-color: hsl(0, 0%, 96%);
+  // background-color: white;
+  overflow-x: hidden;
+}
+body.modal-open {
+  overflow: hidden;
+}
+
+.container {
+  width: min(1200px, 95%);
+  margin-inline: auto;
+}
+
+.page__loading {
+  // outline: 1px solid red;
+  min-height: 80vh;
+  display: grid;
+  place-content: center;
+}
+
+.page__title {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  color: hsl(var(--txt-clr));
+  text-transform: capitalize;
+}
+
+// button {
+//   transition: 0.1s ease-in-out;
+
+//   &:hover {
+//     transform: scale(1.1);
+//   }
+// }
+
+.isOpenCart {
+  background-color: hsl(var(--txt-clr) / 0.8);
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  // visibility: hidden;
+}
+
+.scroll-up {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: hsl(var(--txt-clr));
+  border-color: hsl(var(--txt-clr));
+  border-radius: 0.3rem;
+  // opacity: .8;
+  visibility: hidden;
+
+  &.active {
+    visibility: visible;
+  }
+
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  svg {
+    // fill: white;
+
+    path {
+      stroke: white;
+    }
+  }
+}
+
+.Toastify__progress-bar {
+  visibility: hidden;
+}

@@ -1,0 +1,38 @@
+@use "../../FunctionSASS/FunctionSASS.scss" as *;
+
+.order__page {
+  margin-bottom: 3em;
+}
+
+.orders__item--container {
+  // background-color: white;
+}
+
+.no-orders {
+  // outline: 1px solid red;
+  min-height: 70vh;
+  display: grid;
+  text-align: center;
+  place-content: center;
+  gap: 0.5rem;
+  > p {
+    font-size: 1.7rem;
+    color: hsl(var(--accent-clr));
+    font-weight: 600;
+  }
+
+  > button {
+    color: hsl(var(--txt-clr));
+    background-color: transparent;
+    border: 2px solid hsl(var(--txt-clr));
+    font-weight: 600;
+    border-radius: 0.3rem;
+    padding-block: 0.3em;
+
+    transition: 0.1s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
