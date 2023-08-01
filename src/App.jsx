@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.scss";
 import Products from "./Pages/Products/Products";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, Link } from "react-router-dom";
 import Layout from "./Components/Layout/Layout";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
@@ -42,6 +42,8 @@ function App() {
   return (
     <>
       <div className="app">
+   
+
         <Routes>
           <Route
             path="/"

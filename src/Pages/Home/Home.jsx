@@ -5,7 +5,9 @@ import hero_photo from "/images/woman_hero.png";
 import { useGlobalContext } from "../../AppContext/AppContext";
 import CardProduct from "../../Components/CardProduct/CardProduct";
 import PageLoading from "../../Components/Loaders/PageLoading";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { FaGitAlt } from "react-icons/fa";
+
 const Home = () => {
   const { products, generateRandomProducts } = useGlobalContext();
   // console.log(products);
@@ -16,6 +18,7 @@ const Home = () => {
     women: [],
   });
   const [isLoading, setIsLoading] = useState(true);
+  const [showWarningModal, setShowWarningModal] = useState(false);
 
   const mens = products.filter((product) => product.category === "women's clothing");
   // console.log(mens);
@@ -43,6 +46,34 @@ const Home = () => {
 
   return (
     <>
+      <div className={`warning-modal ${showWarningModal ? "hide" : "show"}`}>
+        <div>
+          <header className="warning-modal__header">
+            <p>
+              <strong>Warning</strong>
+            </p>
+            <button onClick={() => setShowWarningModal(true)}>Close</button>
+          </header>
+
+          <section className="warning-modal__body">
+            <p>
+              This Website has a backend server but unfortunately, I'm not be able to host it online
+              due to 'Free Hosting Webiste Problem'. As an alternative I made a frontend view of the
+              website.
+            </p>
+            <p>
+              Visit The Website Repository.{" "}
+              <Link
+                to="https://github.com/Florvin-04/capstone"
+                target="_blank"
+              >
+                <FaGitAlt />
+              </Link>
+            </p>
+          </section>
+        </div>
+      </div>
+
       <div className="home__page">
         <section className="hero__container">
           <div className="content__wrapper container">
@@ -53,11 +84,10 @@ const Home = () => {
               />
             </div>
             <div>
-              <p className="hero__title">
-                Discover Your Signature Look: Shop With TrendEase Today
-              </p>
+              <p className="hero__title">Discover Your Signature Look: Shop With TrendEase Today</p>
               <p className="hero__description">
-                Find the perfect outfit that speaks to your individuality. Explore TrendEase's diverse range of styles to create your one-of-a-kind fashion statement.
+                Find the perfect outfit that speaks to your individuality. Explore TrendEase's
+                diverse range of styles to create your one-of-a-kind fashion statement.
               </p>
               <button
                 className="hero__button"
